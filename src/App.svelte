@@ -1,9 +1,21 @@
 <script lang="ts">
+	// import { onMount } from "svelte"
+	import colors from "./colors.json"
+
+	const hello = colors.hello
+
+	// onMount(async () => {
+	// 	console.log(colors.hello)
+	// })
 </script>
 
 <main>
 	<h1>Color Psychology</h1>
-	<p>testv2</p>
+	<p>Choose 3 colors</p>
+
+		<div>{hello}</div>
+		<div>tailwind.css</div>
+		<div>i18n</div>
 </main>
 
 <style>
