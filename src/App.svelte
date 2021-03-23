@@ -1,8 +1,8 @@
 <script lang="ts">
 	// import { onMount } from "svelte"
-	import colors from "./colors.json"
+	import data from "./colors.json"
 
-	const hello = colors.hello
+	const colors = data.colors
 
 	// onMount(async () => {
 	// 	console.log(colors.hello)
@@ -13,9 +13,20 @@
 	<h1>Color Psychology</h1>
 	<p>Choose 3 colors</p>
 
-		<div>{hello}</div>
-		<div>tailwind.css</div>
-		<div>i18n</div>
+	<!--	TODO: tailwind.css, i18n-->
+
+	<div class="photos">
+		{#each colors as color}
+			<div style="position: relative; display: inline-block; margin: 3rem;">
+				<div style="width: 100px; height: 100px; background-color: {color.colorA}" />
+				<div style="width: 100px; height: 100px; background-color: {color.colorB}" />
+			</div>
+		{:else}
+			<!-- this block renders when photos.length === 0 -->
+			<p>loading...</p>
+		{/each}
+	</div>
+
 </main>
 
 <style>
