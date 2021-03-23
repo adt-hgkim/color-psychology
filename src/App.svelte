@@ -3,7 +3,7 @@
 
 <main>
 	<h1>Color Psychology</h1>
-	<p>hohoho</p>
+	<p>testv2</p>
 </main>
 
 <style>
