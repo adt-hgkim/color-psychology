@@ -1,6 +1,5 @@
 <script lang="ts">
-    import App from "../App.svelte"
-import type { Color } from "../types"
+    import type { Color } from "../types"
     export let color: Color & { selected: boolean }
     $: isSelected = color.selected
 
