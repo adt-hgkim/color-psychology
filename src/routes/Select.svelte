@@ -35,29 +35,29 @@
     }
 </script>
 
-<main>
-    <p class="guide">Choose 3 colors</p>
-    <div class="cp-container">
-        {#each colors as color}
-            <div class="item">
-                <ColorCard color={color} on:click={() => selectColor(color.id)}/>
-            </div>
-        {/each}
-    </div>
-</main>
+<p class="guide">Choose 3 colors</p>
+<div class="cp-container">
+    {#each colors as color}
+        <div class="item">
+            <ColorCard color={color} on:click={() => selectColor(color.id)}/>
+        </div>
+    {/each}
+</div>
 
 <style lang="postcss">
     p.guide {
-        @apply mt-6;
-        @apply text-4xl text-center tracking-widest;
+        @apply my-6 mb-12;
+        @apply text-center tracking-widest;
+        @apply text-base md:text-4xl
     }
 
 	.cp-container {
-		@apply container flex flex-wrap mx-auto;
+		@apply grid gap-y-12 mx-auto;
+        @apply grid-cols-3 md:grid-cols-6 lg:grid-cols-8;
 	}
 
     .item {
-        @apply relative m-12;
+        @apply relative;
     }
 </style>
 
