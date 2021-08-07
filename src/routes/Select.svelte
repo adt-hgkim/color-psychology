@@ -35,7 +35,7 @@
     }
 </script>
 
-<p class="guide">Choose 3 colors</p>
+<p class="guide text-base md:text-4xl">Choose 3 colors</p>
 <div class="cp-container">
     {#each colors as color}
         <div class="item">
@@ -48,7 +48,6 @@
     p.guide {
         @apply my-6 mb-12;
         @apply text-center tracking-widest;
-        @apply text-base md:text-4xl
     }
 
 	.cp-container {
