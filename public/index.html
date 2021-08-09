@@ -14,15 +14,13 @@
 	<link rel="manifest" href="./manifest.json">
 
 	<script>
-		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", () => {
-				try {
-					navigator.serviceWorker.register("./sw.js").then((reg) => {
-						console.log("Service worker registered.", reg);
-					});
-				} catch (err) {
-					console.error("Service worker registration failed.", err);
-				}
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}, (err) => {
+					console.log('ServiceWorker registration failed: ', err);
+				});
 			});
 		}
 	</script>
