@@ -8,6 +8,11 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import json from '@rollup/plugin-json';
 
+// The majority of this code was copied from the official Workbox documentation
+import { generateSW } from 'rollup-plugin-workbox';
+//...
+
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -55,6 +60,25 @@ export default {
 				// enable run-time checks when not in production
 				dev: !production
 			}
+		}),
+		generateSW({
+			swDest: 'public/build/sw.js',
+			globDirectory: 'public/build',
+			globPatterns: [
+					'**/*.{html,json,js,css}',
+			],
+			skipWaiting: true,
+			clientsClaim: true,
+			runtimeCaching: [{
+					urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+					handler: 'CacheFirst',
+					options: {
+							cacheName: 'images',
+							expiration: {
+									maxEntries: 10,
+							},
+					},
+			}],
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
