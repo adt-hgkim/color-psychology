@@ -6,7 +6,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "ngrok-dev": "ngrok http 5000"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
