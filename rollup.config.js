@@ -62,8 +62,8 @@ export default {
 			}
 		}),
 		generateSW({
-			swDest: 'public/build/sw.js',
-			globDirectory: 'public/build',
+			swDest: 'public/sw.js',
+			globDirectory: 'public/',
 			globPatterns: [
 					'**/*.{html,json,js,css}',
 			],
